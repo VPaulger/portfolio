@@ -28,11 +28,13 @@ const Home = () => {
           setContactPage(false);
         }}
       >
-        <img
-          className='home__navLogo_logo'
-          src={vaughnPaulgerLogo}
-          alt='vaughn Paulger'
-        />
+        <h1 alt='Vaughn Paulger'>
+          <img
+            className='home__navLogo_logo'
+            src={vaughnPaulgerLogo}
+            alt='Vaughn Paulger'
+          />
+        </h1>
         <h2 className='home__navLogo_title'>Full Stack Developer</h2>
       </NavLink>
       <div className='home__navBox'></div>
@@ -86,7 +88,7 @@ const Home = () => {
         {experiencePage && <Experience />}
         {contactPage && (
           <div className='contact_containerText'>
-            Say Hello,
+            Say hello,
             <br />
             (519)-701-0249
             <br />

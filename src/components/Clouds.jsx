@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import $ from 'jquery';
 import '../styles/clouds.scss';
 
-class Clouds extends React.Component {
-  componentDidMount = () => {
+const Clouds = () => {
+  useEffect(() => {
     $(
       (function () {
         var a = 0;
@@ -65,21 +65,20 @@ class Clouds extends React.Component {
     tag.src = 'https://www.youtube.com/player_api';
     var firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-  };
-  render() {
-    return (
-      <div id='wrap'>
-        <div id='viewport'>
-          <div className='tv'>
-            <div
-              className='screen mute'
-              id='tv'
-            ></div>
-          </div>
+  });
+
+  return (
+    <div id='wrap'>
+      <div id='viewport'>
+        <div className='tv'>
+          <div
+            className='screen mute'
+            id='tv'
+          ></div>
         </div>
       </div>
-    );
-  }
-}
+    </div>
+  );
+};
 
 export default Clouds;
