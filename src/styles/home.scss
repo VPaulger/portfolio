@@ -1,0 +1,217 @@
+.home {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: all 1s ease-out;
+  font-family: Abel;
+}
+
+.home__navLogo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: calc(50% - 29px);
+  transform: translateY(-50%);
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+  transition: all 1s ease-out;
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 3px;
+
+  @media only screen and (max-width: 600px) {
+    top: calc(50% - 21px);
+  }
+
+  .home__navLogo_logo {
+    height: 100px;
+
+    @media only screen and (max-width: 600px) {
+      height: 52px;
+    }
+
+    @media only screen and (max-width: 300px) {
+      height: 42px;
+    }
+  }
+  
+  .home__navLogo_title {
+    font-size: 26px;
+    margin: 13px 0 0;
+    text-align: center;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: 600px) {
+      font-size: 18px;
+    }
+  }
+}
+
+.home__navBox {
+  height: 275px;
+  width: 100%;
+  background: rgb(0, 0, 0, 0.5);
+  font-family: Abel;
+  text-transform: uppercase;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  transition: all 1s ease-out;
+
+  @media only screen and (max-width: 600px) {
+    height: 180px;
+  }
+}
+
+
+.home__navItems {
+  height: 35px;
+  width: 100%;
+  background: rgb(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  top: calc(50% + 85px);
+  transform: translateY(-50%);
+  position: absolute;
+  z-index: 1;
+  transition: all 1s ease-out;
+
+  @media only screen and (max-width: 600px) {
+    height: 30px;
+    top: calc(50% + 50px);
+  }
+
+  .home__navItems_container {
+    width: 400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 18px;
+    letter-spacing: 3px;
+
+    @media only screen and (max-width: 600px) {
+      width: 300px;
+    }
+  }
+}
+
+.home__navLink {
+  text-decoration: none;
+  color: white;
+  font-weight: 200;
+  text-transform: uppercase;
+  font-size: 18px;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 14px;
+  }
+
+  &.active {
+    font-weight: bold;
+  }
+
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.experience, .contact {
+  .home__navLogo {
+    top: calc(0% + 55px);
+    transform: translateY(0%);
+
+    @media only screen and (max-width: 600px) {
+      top: calc(0% + 45px);
+    }
+  }
+
+  .home__navBox {
+    top: 0%;
+    transform: translateY(0%);
+    height: 25px;
+
+    @media only screen and (max-width: 600px) {
+      height: 20px;
+    }
+  }
+
+  .home__navItems {
+    top: calc(50% - 142px);
+    transform: translateY(-50%);
+
+    @media only screen and (max-width: 600px) {
+      top: calc(50% - 142px);
+    }
+
+    @media only screen and (max-width: 600px) and (min-height: 700px) {
+      top: calc(50% - 180px);
+    }
+
+    @media only screen and (min-height: 1100px) {
+      top: calc(50% - 172px);
+    }
+  }
+
+  .experience_slider, .contact_container {
+    height: 550px;
+    top: calc(50% + 116px);
+    transform: translateY(-50%);
+
+    @media only screen and (max-width: 600px) {
+      height: 500px;
+      top: calc(50% + 93px);
+    }
+
+    @media only screen and (max-width: 600px) and (min-height: 700px) {
+      top: calc(50% + 55px);
+    }
+
+    @media only screen and (min-height: 1100px) {
+      top: calc(50% + 85px);
+    }
+  }  
+}
+
+.experience_slider, .contact_container {
+  height: 0;
+  width: 100%;
+  transition: all 1s ease-out;
+  position: absolute;
+  top: calc(50% + 67px);
+  transform: translateY(-50%);
+  background: rgb(0, 0, 0, 0.5);
+
+  @media only screen and (max-width: 600px) {
+    top: calc(50% + 35px);
+  }
+}
+
+.contact_container {
+  color: white;
+  font-family: Abel;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  text-shadow: 2px 2px #000000;
+  line-height: 2;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media only screen and (max-width: 600px) {
+    font-size: 22px;
+  }
+}
+
+.contactEmail {
+  text-decoration: none;
+  color: #4C94FF;
+}

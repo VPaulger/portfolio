@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css?family=Abel');
+
+body {
+  margin: 0;
+  /* display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh; */
+  background-image: url('./assets/vaughnPaulgerBackground.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  height: 100vh;
+}
