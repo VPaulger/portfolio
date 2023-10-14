@@ -90,7 +90,7 @@ const Home = () => {
           <div className='contact_containerText'>
             Say hello,
             <br />
-            (519)-701-0249
+            (519) 701-0249
             <br />
             <a
               className='contactEmail'

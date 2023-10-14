@@ -38,7 +38,7 @@
       height: 42px;
     }
   }
-  
+
   .home__navLogo_title {
     font-size: 26px;
     margin: 13px 0 0;
@@ -79,7 +79,7 @@
 .home__navItems {
   height: 35px;
   width: 100%;
-  background: rgb(0, 0, 0, 0.5);
+  background: rgb(0, 0, 0, 0.75);
   display: flex;
   justify-content: center;
   top: calc(50% + 85px);
@@ -148,38 +148,43 @@
   }
 
   .home__navItems {
-    top: calc(50% - 142px);
-    transform: translateY(-50%);
+    top: calc(30% - 35px);
+    transform: initial;
 
     @media only screen and (max-width: 600px) {
-      top: calc(50% - 142px);
+      top: calc(30% - 30px);
     }
 
     @media only screen and (max-width: 600px) and (min-height: 700px) {
-      top: calc(50% - 180px);
+      top: calc(25% - 30px);
     }
 
-    @media only screen and (min-height: 1100px) {
-      top: calc(50% - 172px);
+    @media only screen and (min-width: 900px) and (max-height: 900px) {
+      top: calc(35% - 35px);
+    }
+
+    @media only screen and (min-height: 1150px) {
+      top: calc(25% - 35px);
     }
   }
 
   .experience_slider, .contact_container {
-    height: 550px;
-    top: calc(50% + 116px);
-    transform: translateY(-50%);
+    height: 70%;
 
     @media only screen and (max-width: 600px) {
-      height: 500px;
-      top: calc(50% + 93px);
+      height: 70%;
     }
 
     @media only screen and (max-width: 600px) and (min-height: 700px) {
-      top: calc(50% + 55px);
+      height: 75%;
     }
 
-    @media only screen and (min-height: 1100px) {
-      top: calc(50% + 85px);
+    @media only screen and (min-width: 900px) and (max-height: 900px) {
+      height: 65%;
+    }
+
+    @media only screen and (min-height: 1150px) {
+      height: 75%;
     }
   }  
 }
@@ -189,13 +194,9 @@
   width: 100%;
   transition: all 1s ease-out;
   position: absolute;
-  top: calc(50% + 67px);
-  transform: translateY(-50%);
+  bottom: 0;
   background: rgb(0, 0, 0, 0.5);
-
-  @media only screen and (max-width: 600px) {
-    top: calc(50% + 35px);
-  }
+  overflow: hidden;
 }
 
 .contact_container {

@@ -1,66 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import Slider from 'react-slick';
-import acmpTorontoSlider from '../assets/acmpToronto/1.png';
-import acuityPartnersSlider from '../assets/acuityPartners/1.png';
-import mozaikGlobalSlider from '../assets/mozaikGlobal/1.png';
-import quilHealthSlider from '../assets/quilHealth/1.webp';
-import r10TechConferenceSlider from '../assets/r10TechConference/1.png';
-import plannedParenthoodSlider from '../assets/plannedParenthood.png';
-import leaNelsonSlider from '../assets/leaNelson.png';
+import React, { useState } from 'react';
+import acmpToronto from '../assets/acmpToronto/1.png';
+import acuityPartners from '../assets/acuityPartners/1.png';
+import mozaikGlobal from '../assets/mozaikGlobal/1.png';
+import quilHealth from '../assets/quilHealth/1.webp';
+import r10TechConference from '../assets/r10TechConference/1.png';
+import plannedParenthood from '../assets/plannedParenthood.png';
+import intentSolutionsGroup from '../assets/intentSolutionsGroup.png';
+import theDonutShop from '../assets/theDonutShop.png';
+import lexus from '../assets/lexus.jpeg';
+import jdeesMarketGrill from '../assets/jdeesMarketGrill.png';
+import leaNelson from '../assets/leaNelson.png';
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
 import '../styles/experience.scss';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-
-const SampleNextArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'block' }}
-      onClick={onClick}
-    />
-  );
-};
-
-const SamplePrevArrow = (props) => {
-  const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: 'block' }}
-      onClick={onClick}
-    />
-  );
-};
 
 const Experience = () => {
-  var settings = {
-    nextArrow: <SampleNextArrow />,
-    prevArrow: <SamplePrevArrow />,
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    // autoplay: true,
-    autoplaySpeed: 5000,
-    responsive: [
-      {
-        breakpoint: 700,
-        settings: { slidesToShow: 1, slidesToScroll: 1 },
-      },
-      {
-        breakpoint: 1380,
-        settings: { slidesToShow: 2, slidesToScroll: 1 },
-      },
-      {
-        breakpoint: 1440,
-        settings: { slidesToShow: 3, slidesToScroll: 1 },
-      },
-    ],
-  };
   const imageArray = (data) => {
     const imagePaths = [];
     Object.values(data).forEach(({ default: path }) => {
@@ -70,19 +24,16 @@ const Experience = () => {
     });
     return imagePaths;
   };
-  const acmpToronto = imageArray(
+  const acmpTorontoArray = imageArray(
     import.meta.glob('../assets/acmpToronto/*', { eager: true })
   );
-  const quilHealth = imageArray(
+  const quilHealthArray = imageArray(
     import.meta.glob('../assets/quilHealth/*', { eager: true })
   );
-  const r10TechConference = imageArray(
+  const r10TechConferenceArray = imageArray(
     import.meta.glob('../assets/r10TechConference/*', { eager: true })
   );
-  const mozaikGlobal = imageArray(
-    import.meta.glob('../assets/mozaikGlobal/*', { eager: true })
-  );
-  const acuityPartners = imageArray(
+  const acuityPartnersArray = imageArray(
     import.meta.glob('../assets/acuityPartners/*', { eager: true })
   );
 
@@ -107,108 +58,135 @@ const Experience = () => {
   const handleMoveNext = () => setIndex(nextIndex);
 
   return (
-    <div className='experience_sliderContainer'>
-      {lightboxOpen && (
-        <Lightbox
-          mainSrc={currentImage}
-          mainSrcThumbnail={currentImage}
-          nextSrc={nextImage}
-          nextSrcThumbnail={nextImage}
-          prevSrc={prevImage}
-          prevSrcThumbnail={prevImage}
-          onCloseRequest={handleClose}
-          onMovePrevRequest={handleMovePrev}
-          onMoveNextRequest={handleMoveNext}
-        />
-      )}
-      <Slider {...settings}>
-        <div className='experience_Block'>
-          <div
-            className='experience_BlockBox'
-            onClick={() => openLightbox(quilHealth)}
-          >
-            <div className='experience_BlockBox_img'>
-              <img src={quilHealthSlider} />
-            </div>
-            <h3>Quil Health</h3>
-            <p>React Web, Android & iOS App</p>
+    <div className='experience_container'>
+      <div className='experience_containerWrap'>
+        {lightboxOpen && (
+          <Lightbox
+            mainSrc={currentImage}
+            mainSrcThumbnail={currentImage}
+            nextSrc={nextImage}
+            nextSrcThumbnail={nextImage}
+            prevSrc={prevImage}
+            prevSrcThumbnail={prevImage}
+            onCloseRequest={handleClose}
+            onMovePrevRequest={handleMovePrev}
+            onMoveNextRequest={handleMoveNext}
+          />
+        )}
+        <div
+          className='experience_block'
+          onClick={() => openLightbox(quilHealthArray)}
+        >
+          <div className='experience_blockImg'>
+            <img src={quilHealth} />
           </div>
+          <h3>Quil Health</h3>
+          <p>React Web, Android & iOS App</p>
         </div>
-        <div className='experience_Block'>
-          <div
-            className='experience_BlockBox'
-            onClick={() => openLightbox(mozaikGlobal)}
-          >
-            <div className='experience_BlockBox_img'>
-              <img src={mozaikGlobalSlider} />
-            </div>
-            <h3>Mozaik Global</h3>
-            <p>React Native iOS App</p>
+        <a
+          className='experience_block'
+          href='https://www.mozaik.global/'
+          target='_blank'
+        >
+          <div className='experience_blockImg'>
+            <img src={mozaikGlobal} />
           </div>
-        </div>
-        <div className='experience_Block'>
-          <div
-            className='experience_BlockBox'
-            onClick={() => openLightbox(acmpToronto)}
-          >
-            <div className='experience_BlockBox_img full-width'>
-              <img src={acmpTorontoSlider} />
-            </div>
-            <h3>ACMP Toronto</h3>
-            <p>Custom WordPress Theme</p>
+          <h3>Mozaik Global</h3>
+          <p>React Native iOS App</p>
+        </a>
+        <div
+          className='experience_block'
+          onClick={() => openLightbox(acmpTorontoArray)}
+        >
+          <div className='experience_blockImg full-width'>
+            <img src={acmpToronto} />
           </div>
+          <h3>ACMP Toronto</h3>
+          <p>Custom WordPress Theme</p>
         </div>
-        <div className='experience_Block'>
-          <a
-            className='experience_BlockBox'
-            href='http://www.ppt.on.ca/'
-            target='_blank'
-          >
-            <div className='experience_BlockBox_img full-width'>
-              <img src={plannedParenthoodSlider} />
-            </div>
-            <h3>Planned Parenthood</h3>
-            <p>Custom WordPress Theme</p>
-          </a>
-        </div>
-        <div className='experience_Block'>
-          <div
-            className='experience_BlockBox'
-            onClick={() => openLightbox(acuityPartners)}
-          >
-            <div className='experience_BlockBox_img'>
-              <img src={acuityPartnersSlider} />
-            </div>
-            <h3>Acuity Partners</h3>
-            <p>Custom WordPress Theme</p>
+        <div className='experience_block'>
+          <div className='experience_blockImg full-width'>
+            <img src={lexus} />
           </div>
+          <h3>Lexus & Toyota</h3>
+          <p>Web Banners & eDM Templates</p>
         </div>
-        <div className='experience_Block'>
-          <div
-            className='experience_BlockBox'
-            onClick={() => openLightbox(r10TechConference)}
-          >
-            <div className='experience_BlockBox_img'>
-              <img src={r10TechConferenceSlider} />
-            </div>
-            <h3>R10 Tech Conference</h3>
-            <p>React Native iOS App</p>
+        <a
+          className='experience_block'
+          href='https://e-commerce-ce6ad.web.app/'
+          target='_blank'
+        >
+          <div className='experience_blockImg full-width'>
+            <img src={theDonutShop} />
           </div>
+          <h3>The Donut Shop</h3>
+          <p>React Web App</p>
+        </a>
+        <div
+          className='experience_block'
+          onClick={() => openLightbox(r10TechConferenceArray)}
+        >
+          <div className='experience_blockImg'>
+            <img src={r10TechConference} />
+          </div>
+          <h3>R10 Tech Conference</h3>
+          <p>React Native iOS App</p>
         </div>
-        <div className='experience_Block'>
-          <a
-            className='experience_BlockBox'
-            href='http://leanelson.com/'
-            target='_blank'
-          >
-            <div className='experience_BlockBox_img full-width'>
-              <img src={leaNelsonSlider} />
-            </div>
-            <h3>Lea Nelson</h3>
-            <p>Wordpress Website</p>
-          </a>
+        <a
+          className='experience_block'
+          href='https://www.intentsg.com/'
+          target='_blank'
+        >
+          <div className='experience_blockImg full-width'>
+            <img src={intentSolutionsGroup} />
+          </div>
+          <h3>Intent Solutions Group</h3>
+          <p>WordPress Website</p>
+        </a>
+        <a
+          className='experience_block'
+          href='https://jdeesmarketgrill.com/'
+          target='_blank'
+        >
+          <div className='experience_blockImg'>
+            <img src={jdeesMarketGrill} />
+          </div>
+          <h3>JDee's Market Grill</h3>
+          <p>HTML Website</p>
+        </a>
+        <a
+          className='experience_block'
+          href='http://www.ppt.on.ca/'
+          target='_blank'
+        >
+          <div className='experience_blockImg full-width'>
+            <img src={plannedParenthood} />
+          </div>
+          <h3>Planned Parenthood</h3>
+          <p>Custom WordPress Theme</p>
+        </a>
+        <div
+          className='experience_block'
+          onClick={() => openLightbox(acuityPartnersArray)}
+        >
+          <div className='experience_blockImg'>
+            <img src={acuityPartners} />
+          </div>
+          <h3>Acuity Partners</h3>
+          <p>Custom WordPress Theme</p>
         </div>
-      </Slider>
+        <a
+          className='experience_block'
+          href='http://leanelson.com/'
+          target='_blank'
+        >
+          <div className='experience_blockImg full-width'>
+            <img src={leaNelson} />
+          </div>
+          <h3>Lea Nelson</h3>
+          <p>Wordpress Website</p>
+        </a>
+      </div>
     </div>
   );
 };

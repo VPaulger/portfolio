@@ -1,49 +1,25 @@
-.experience_sliderContainer {
-  width: 95%;
-  margin: 0 auto;
+.experience_container {
+  height: 100%;
+  display: flex;
+}
 
-  @media only screen and (max-width: 1280px) {
-    width: 92%;
-  }
-
-  @media only screen and (max-width: 960px) {
-    width: 90%;
-  }
+.experience_containerWrap {
+  display: flex;
+  flex-wrap: wrap;
+  overflow-y: scroll;
+  justify-content: center;
+  padding: 30px 0;
 
   @media only screen and (max-width: 600px) {
-    width: 85%;
-    margin-bottom: 15px;
+    padding: 10px 0;
   }
 
-  @media only screen and (max-width: 600px) and (min-height: 700px) {
-    margin-bottom: 0;
-    margin-top: 10px;
-  }
-
-  /* slick */
-  .slick-dots li button:before {
-    color: white;
-  }
-
-  .slick-dots li.slick-active button:before {
-    color: white;
-  }
-
-  .slick-dots {
-    bottom: -75px;
-
-    @media only screen and (max-width: 600px) {
-      bottom: -55px;
-    }
+  @media only screen and (max-width: 400px) {
+    padding: 0;
   }
 }
 
-.experience_Block {
-  display: flex !important;
-  justify-content: center;
-}
-
-.experience_Block a {
+.experience_block {
   text-decoration: none;
 
   &:visited {
@@ -51,7 +27,7 @@
   }
 }
 
-.experience_BlockBox {
+.experience_block {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -61,17 +37,22 @@
   color: white;
   font-family: 'Abel';
   z-index: 10;
+  margin: 30px;
   cursor: pointer;
 
-  @media only screen and (max-width: 600px) {
-    width: 250px;
+  @media only screen and (max-width: 935px) {
+    width: 325px;
   }
 
-  @media only screen and (max-width: 600px) and (min-height: 700px) {
-    width: 275px;
+  @media only screen and (max-width: 770px) {
+    width: 300px;
   }
 
-  @media only screen and (max-width: 900px) {
+  @media only screen and (max-width: 720px) {
+    width: 400px;
+  }
+
+  @media only screen and (max-width: 450px) {
     width: 325px;
   }
 
@@ -80,7 +61,7 @@
   }
 }
 
-.experience_BlockBox a {
+.experience_block a {
   width: 100%;
   padding-bottom: 5px;
   text-decoration: none;
@@ -97,7 +78,7 @@
   }
 }
 
-.experience_BlockBox p {
+.experience_block p {
   font-weight: 500;
   font-size: 20px;
   margin: 0;
@@ -109,7 +90,7 @@
   }
 }
 
-.experience_BlockBox h3 {
+.experience_block h3 {
   font-size: 30px;
   padding-top: 5px;
   padding-bottom: 5px;
@@ -126,9 +107,9 @@
 }
 
 
-.experience_BlockBox_img {
+.experience_blockImg {
   position: relative;
-  height: 300px;
+  height: 275px;
   width: 100%;
   overflow: hidden;
   margin-bottom: 15px;
@@ -143,7 +124,7 @@
   }
 }
 
-.experience_BlockBox_img img {
+.experience_blockImg img {
   width: 100%;
   height: 100%;
   object-fit: contain;
