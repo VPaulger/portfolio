@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import acmpToronto from '../assets/acmpToronto/1.png';
+import dealsy from '../assets/dealsy.png';
 import acuityPartners from '../assets/acuityPartners/1.png';
 import mozaikGlobal from '../assets/mozaikGlobal/1.png';
 import quilHealth from '../assets/quilHealth/1.webp';
 import r10TechConference from '../assets/r10TechConference/1.png';
 import plannedParenthood from '../assets/plannedParenthood.png';
 import intentSolutionsGroup from '../assets/intentSolutionsGroup.png';
-import theDonutShop from '../assets/theDonutShop.png';
 import lexus from '../assets/lexus.jpeg';
 import jdeesMarketGrill from '../assets/jdeesMarketGrill.png';
 import leaNelson from '../assets/leaNelson.png';
@@ -24,18 +24,10 @@ const Experience = () => {
     });
     return imagePaths;
   };
-  const acmpTorontoArray = imageArray(
-    import.meta.glob('../assets/acmpToronto/*', { eager: true })
-  );
-  const quilHealthArray = imageArray(
-    import.meta.glob('../assets/quilHealth/*', { eager: true })
-  );
-  const r10TechConferenceArray = imageArray(
-    import.meta.glob('../assets/r10TechConference/*', { eager: true })
-  );
-  const acuityPartnersArray = imageArray(
-    import.meta.glob('../assets/acuityPartners/*', { eager: true })
-  );
+  const acmpTorontoArray = imageArray(import.meta.glob('../assets/acmpToronto/*', { eager: true }));
+  const quilHealthArray = imageArray(import.meta.glob('../assets/quilHealth/*', { eager: true }));
+  const r10TechConferenceArray = imageArray(import.meta.glob('../assets/r10TechConference/*', { eager: true }));
+  const acuityPartnersArray = imageArray(import.meta.glob('../assets/acuityPartners/*', { eager: true }));
 
   const [index, setIndex] = useState(0);
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -73,6 +65,17 @@ const Experience = () => {
             onMoveNextRequest={handleMoveNext}
           />
         )}
+        <a
+          className='experience_block'
+          href='https://www.dealsy.ca/'
+          target='_blank'
+        >
+          <div className='experience_blockImg full-width'>
+            <img src={dealsy} />
+          </div>
+          <h3>Dealsy</h3>
+          <p>React, Android & iOS App</p>
+        </a>
         <div
           className='experience_block'
           onClick={() => openLightbox(quilHealthArray)}
@@ -81,7 +84,7 @@ const Experience = () => {
             <img src={quilHealth} />
           </div>
           <h3>Quil Health</h3>
-          <p>React Web, Android & iOS App</p>
+          <p>React, Android & iOS App</p>
         </div>
         <a
           className='experience_block'
@@ -109,28 +112,7 @@ const Experience = () => {
             <img src={lexus} />
           </div>
           <h3>Lexus & Toyota</h3>
-          <p>Web Banners & eDM Templates</p>
-        </div>
-        <a
-          className='experience_block'
-          href='https://e-commerce-ce6ad.web.app/'
-          target='_blank'
-        >
-          <div className='experience_blockImg full-width'>
-            <img src={theDonutShop} />
-          </div>
-          <h3>The Donut Shop</h3>
-          <p>React Web App</p>
-        </a>
-        <div
-          className='experience_block'
-          onClick={() => openLightbox(r10TechConferenceArray)}
-        >
-          <div className='experience_blockImg'>
-            <img src={r10TechConference} />
-          </div>
-          <h3>R10 Tech Conference</h3>
-          <p>React Native iOS App</p>
+          <p>Web Ads, Interactive Displays & Email Templates</p>
         </div>
         <a
           className='experience_block'
@@ -152,7 +134,7 @@ const Experience = () => {
             <img src={jdeesMarketGrill} />
           </div>
           <h3>JDee's Market Grill</h3>
-          <p>HTML Website</p>
+          <p>Website</p>
         </a>
         <a
           className='experience_block'
