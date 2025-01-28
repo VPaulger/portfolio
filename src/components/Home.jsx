@@ -41,7 +41,7 @@ const Home = () => {
       <div className='home__navItems'>
         <div className='home__navItems_container'>
           <a
-            href={vaughnPaulgerResume}
+            href='https://www.linkedin.com/in/vaughn-paulger/'
             target='_blank'
             rel='noreferrer'
             className='home__navLink'
@@ -65,23 +65,12 @@ const Home = () => {
           >
             Experience
           </NavLink>
-          <NavLink
+          <a
             className='home__navLink'
-            to='/contact'
-            onClick={() => {
-              setHomePage(false);
-              setExperiencePage(false);
-              if (homePage) {
-                setTimeout(() => {
-                  setContactPage(true);
-                }, '1000');
-              } else {
-                setContactPage(true);
-              }
-            }}
+            href='mailto:vaughn.paulger@gmail.com'
           >
             Contact
-          </NavLink>
+          </a>
         </div>
       </div>
       <div className='experience_slider contact_container'>
@@ -89,8 +78,6 @@ const Home = () => {
         {contactPage && (
           <div className='contact_containerText'>
             Say hello,
-            <br />
-            (519) 701-0249
             <br />
             <a
               className='contactEmail'
